@@ -8,6 +8,8 @@
 	<version>8.0</version>
 
 	<build>
+
+
 		<finalName>tomcat-research</finalName>
 		<sourceDirectory>java</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
@@ -22,6 +24,16 @@
 			</testResource>
 		</testResources>
 		<plugins>
+                       <plugin>
+                            <artifactId>maven-assembly-plugin</artifactId>
+                            <configuration>
+                            <archive>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            </configuration>
+                        </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
