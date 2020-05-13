@@ -107,6 +107,11 @@ public final class HTMLHostManagerServlet extends HostManagerServlet {
         list(request, response, message, smClient);
     }
 
+    public String sourceMethod(HttpServletRequest request) throws ServletException, IOException {
+        
+        return request.getParameter("name");
+    } 
+
 
     /**
      * Process a POST request for the specified resource.
@@ -127,7 +132,7 @@ public final class HTMLHostManagerServlet extends HostManagerServlet {
         // Identify the request parameters that we need
         String command = request.getPathInfo();
 
-        String name = request.getParameter("name");
+        String name = sourceMethod(request);
 
         // Prepare our output writer to generate the response message
         response.setContentType("text/html; charset=" + Constants.CHARSET);
